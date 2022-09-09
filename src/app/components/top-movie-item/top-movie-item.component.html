@@ -1,0 +1,48 @@
+<div class="top-movie-item focusable" (keydown)="handleKey($event)">
+
+    <div class="top-movie-item__img">    
+        <img [ngStyle]="{'opacity':hideImg? 0:1}" class="top-movie-item__img__img" (error)="hideImage()" [src]=image />
+        <div class="top-movie-item__img__overlayer">
+            <div class="top-movie-item__img__overlayer__info">
+
+                <div class="top-movie-item__img__overlayer__info__text">
+                    <div >
+                        <h1 class="title">{{ movie.title }}</h1>
+                        <div class="top-movie-item__img__overlayer__info__text__extras">
+                            <div class="icons-container">
+                                <div class="golden-icon-container">
+                                    <mat-icon class="transparent-icon" aria-hidden="false" aria-label="Original Movies" fontIcon="star"></mat-icon>
+                                </div>
+                                <small class="info">{{ movie.vote_average }}</small>
+                            </div>
+                            <div class="icons-container">
+                                <div class="fire-icon-container">
+                                    <mat-icon class="transparent-icon" aria-hidden="false" aria-label="Original Movies">local_fire_department</mat-icon>
+                                </div>
+                
+                                <small class="info">{{ movie.popularity }}</small>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="top-movie-item__img__overlayer__info__text__overview">
+                        <h3 class="overview"> {{ movie.overview }} </h3>
+                    </div>
+                </div>
+
+                <div class="top-movie-item__img__overlayer__info__more">
+                    <div class="top-movie-item__img__overlayer__info__more__rank ">
+                       
+                        #{{ rank }}
+               
+                    </div>
+                    <div>
+                        <app-details-modal id="details-btn" [movie]="movie"></app-details-modal>
+                    </div>
+                </div>
+            </div>
+            
+
+        </div>
+    </div>
+</div>

@@ -1,1 +1,136 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./variables.scss";
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+
+
+@font-face {
+    font-family: 'Lora';
+    src: url('./assets/fonts/Titillium_Web/TitilliumWeb-Regular.ttf'); /* IE9 Compat Modes */
+
+  }
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+body,html{
+
+    height: 100%;
+    width: 100%;
+    background-color: $primay-background-color !important;
+    font-family: 'Lora';
+}
+
+
+.modal-content{
+    -webkit-border-radius: 20px !important;
+    -moz-border-radius: 20px !important;
+    border-radius: 20px !important;
+    overflow: auto;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.modal{
+    width: 100% !important;
+    height: 100% !important;
+    --bs-modal-width: 100% !important;
+}
+
+.modal-dialog{
+    height: 95% !important;
+    width: 100% !important;
+   
+}
+
+
+app-movie-modal-view{
+    height: 100%;
+}
+app-search-bar{
+    width: 100%;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+.dialog{
+    // border: 12px solid red;
+    width: 100px;
+    height: 100px;
+}
+.backdrop{
+    background-color: rgba(0, 0, 0, 0.3) !important;
+    opacity: 1 !important;
+    filter: blur(10px) !important;
+    backdrop-filter: blur(10px) !important;
+
+}
+
+
+// .mat-icon{
+//     border: 2px solid lime;
+//     height: 100px !important;
+//     width: 100px !important;
+    
+// }
+.mat-icon{
+    width: 40px !important;
+    height: 40px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.transparent-icon{
+    color: transparent !important;
+}
+.yellow-icon{
+    color:yellow !important;
+}
+.red-icon{
+    color:red !important;
+}
+.white-icon{
+    color:white !important;
+}
+.v-big-icon{
+    font-size: 2vw !important;
+}
+
+
+
+.golden-icon-container{
+    background: linear-gradient(45deg, yellow, orange);
+    -webkit-background-clip: text;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.fire-icon-container{
+    background: linear-gradient(45deg, red, orange);
+    -webkit-background-clip: text;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: $phones-width) {
+    .modal-dialog{
+        height: 70% !important;
+    }
+}
+
+@media (min-width: 576px){
+    .modal-dialog {
+        max-width: 90%;
+        margin: 1.75rem auto;
+      }
+}
+

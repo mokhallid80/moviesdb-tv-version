@@ -2,12 +2,44 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Movies11</title>
-  <base href="/">
+  <title>MoviesDB</title>
+  <base href="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&amp;display=swap" rel="stylesheet">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#1976d2">
+  <script src="https://luke-chang.github.io/js-spatial-navigation/spatial_navigation.js"></script>
+  <script>
+
+    window.addEventListener('load', function() {
+      // Initialize
+      SpatialNavigation.init();
+
+      // Define navigable elements (anchors and elements with "focusable" class).
+      SpatialNavigation.add({
+        selector: '.focusable'
+      });
+
+      // Make the *currently existing* navigable elements focusable.
+      SpatialNavigation.makeFocusable();
+
+      // Focus the first navigable element.
+
+    });
+  </script>
+  <style>
+    /* Add style to the focused elements */
+    :focus {
+      box-shadow: 0 0 0 6pt red;
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
 </head>
 <body>
   <app-root></app-root>
+  <noscript>Please enable JavaScript to continue using this application.</noscript>
 </body>
 </html>

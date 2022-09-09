@@ -1,0 +1,43 @@
+
+
+<body>
+    <div class="main-container">
+        <div class="main-container__nav-bar " #target1>
+            <app-nav-bar></app-nav-bar>
+        </div>
+
+        <div class="main-container__scroll">
+
+            <div class="focusable" (click)="scroll(target1)">
+                <mat-icon >expand_less</mat-icon>
+            </div>
+            <div class="focusable" (click)="scroll(target2)">
+                <mat-icon >expand_more</mat-icon>
+            </div>
+            
+            
+        </div>
+        <!-- <app-normal-view [ngStyle]="{'height':'100%','width':'100%'}"></app-normal-view> -->
+        
+        <div [ngStyle]="{'height':'100%'}" class="main-container__movies__top-movies ">
+            <app-top-movie></app-top-movie>
+        </div>
+        <div class="main-container__movies__normal-movies ">
+            <app-normal-movie ></app-normal-movie>
+        </div>
+        <div class="main-container__footer focusable" #target2>
+            <div class="main-container__footer__contacts">
+                <div [ngStyle]="{'margin':'1.3vh'}">Contact Us </div>
+                <div class="main-container__footer__contacts__icons">
+                    <div><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon></div>
+                    <div><mat-icon class="white-icon big-icon" aria-hidden="false" aria-label="Original Movies" fontIcon="email"></mat-icon></div>
+                    <div><mat-icon class="white-icon big-icon" aria-hidden="false" aria-label="Original Movies" fontIcon="local_phone"></mat-icon></div>
+                    <div><mat-icon class="white-icon big-icon" aria-hidden="false" aria-label="Original Movies" fontIcon="message"></mat-icon></div>
+                </div>
+            </div>
+            
+        </div>
+        <!-- <app-normal-view></app-normal-view> -->
+        <!-- <router-outlet></router-outlet> -->
+    </div>
+</body>

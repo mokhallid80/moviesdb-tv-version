@@ -1,0 +1,55 @@
+<div [ngClass]="{'normal-movies-container': true}">
+    <div class="normal-movies-container__title">
+        <div class="normal-movies-container__title__text">
+            Popular Movies
+        </div>
+    </div>
+    <!-- search -->
+
+    <div class="normal-movies-container__search">
+        <div class="normal-movies-container__search__back focusable" (click)="goBack()">
+            HOME
+            <mat-icon class="movies-icon" aria-hidden="false" aria-label="Original Movies" fontIcon="local_movies"></mat-icon>
+        </div>
+        <div class="normal-movies-container__search__content">
+            <app-search-bar (outputEmitter)="changeContent($event)"></app-search-bar>
+        </div>
+        
+    </div>
+    <div class="normal-movies-container__filters">
+        <app-secondary-button class ="focusable" (btnAction)="changeGenre(28)" text="Action" [checked]="objFilters[28]"></app-secondary-button>
+        <app-secondary-button class ="focusable" (btnAction)="changeGenre(35)" text="Comedy" [checked]="objFilters[35]"></app-secondary-button>
+        <app-secondary-button class ="focusable" (btnAction)="changeGenre(18)" text="Drama" [checked]="objFilters[18]"></app-secondary-button>
+
+    </div>
+
+
+    <div *ngIf="!notEmpty" class="empty-movies-container__no-results">
+        No Results Were Found.
+    </div>
+
+    <div class="normal-movies-container__movies">
+        <div *ngFor="let movie of displayedMovies" class="normal-movies-container__movies__movie">
+                <app-normal-movie-item [movie]="movie"></app-normal-movie-item>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="normal-movies-container__pagination">
+
+        <div [ngStyle]="{'margin-right':'1vw'}">
+            <app-secondary-button (btnAction)="changePage(-10)" text="Back" focusable="true"></app-secondary-button>
+        </div>
+        <div>
+            <app-secondary-button (btnAction)="changePage(+10)" text="Next" focusable="true"></app-secondary-button>
+        </div>
+        
+
+    </div>
+    
+
+   
+</div>
