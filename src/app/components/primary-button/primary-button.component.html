@@ -1,5 +1,5 @@
-<div class="primary-btn-container" (click)="onClick()" (keyup.enter)="onClick()">
-    <button [ngClass]="{'primary-btn-container__primary-btn': true, 'focusable': focusableClass}" >
+<div class="primary-btn-container" >
+    <button (click)="onClick($event)" (keydown)="onClick($event)" [ngClass]="{'primary-btn-container__primary-btn': true, 'focusable': focusableClass}" >
         {{text}}
     </button>    
 </div>

@@ -20,7 +20,8 @@ export class PrimaryButtonComponent implements OnInit {
     else
       this.focusableClass = false;
     }
-  onClick(){
+  onClick(event){
+    if(event.type === 'click' || (event.keyCode && event.keyCode === 13))
     this.btnAction.emit();
   }
 

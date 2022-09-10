@@ -17,7 +17,8 @@ export class DetailsModalComponent {
   open() {
     const modalRef = this.modalService.open(MovieModalViewComponent,{backdropClass:"backdrop"});
     modalRef.componentInstance.name = 'Movie Details';
-    modalRef.componentInstance.fromParent = this.data;
+    modalRef.componentInstance.fromParent = {data:this.data, ref: modalRef};
+ 
     
   }
 }

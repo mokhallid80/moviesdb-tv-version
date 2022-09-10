@@ -13,27 +13,35 @@
   <meta name="theme-color" content="#1976d2">
   <script src="https://luke-chang.github.io/js-spatial-navigation/spatial_navigation.js"></script>
   <script>
-
     window.addEventListener('load', function() {
+      
       // Initialize
-      SpatialNavigation.init();
+      var SN = SpatialNavigation;
+      SN.init();
 
       // Define navigable elements (anchors and elements with "focusable" class).
-      SpatialNavigation.add({
+      SN.add({
+        id: 'main',
         selector: '.focusable'
       });
-
+      SN.add({
+          id: 'keyboard',
+          selector: '.key-focusable',
+        });
       // Make the *currently existing* navigable elements focusable.
-      SpatialNavigation.makeFocusable();
+      SN.makeFocusable();
 
-      // Focus the first navigable element.
 
     });
   </script>
   <style>
     /* Add style to the focused elements */
     :focus {
-      box-shadow: 0 0 0 6pt red;
+      outline: none;
+      box-shadow: 0 0 0 4pt rgba(134, 5, 154, 0.754);
+      transition: transform 0.4s;
+      transform:scale(1.05);
+      border: none;
     }
   </style>
   <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">

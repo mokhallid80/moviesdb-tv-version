@@ -1,25 +1,31 @@
+<script>
+    window.addEventListener("load", function(){
+        console.log("hi")
+    })
+</script >
 <div [ngClass]="{'normal-movies-container': true}">
     <div class="normal-movies-container__title">
-        <div class="normal-movies-container__title__text">
+        <div class="normal-movies-container__title__text focusable" (click)="goBack($event)" (keydown)="goBack($event)">
             Popular Movies
         </div>
     </div>
     <!-- search -->
 
-    <div class="normal-movies-container__search">
-        <div class="normal-movies-container__search__back focusable" (click)="goBack()">
-            HOME
-            <mat-icon class="movies-icon" aria-hidden="false" aria-label="Original Movies" fontIcon="local_movies"></mat-icon>
+
+    <div class="normal-movies-container__filters">
+        <div class="normal-movies-container__filters__group">
+            <app-secondary-button class ="focusable" (btnAction)="changeGenre(28)" text="Action" [checked]="objFilters[28]"></app-secondary-button>
+            <app-secondary-button class ="focusable" (btnAction)="changeGenre(35)" text="Comedy" [checked]="objFilters[35]"></app-secondary-button>
+            <app-secondary-button class ="focusable" (btnAction)="changeGenre(18)" text="Drama" [checked]="objFilters[18]"></app-secondary-button>
+        </div>
+
+        <div [ngClass]="{'normal-movies-container__search__keyboard': true, 'hide-keyboard' : !showKeyboard }">
+            <app-keyboard (enterAction)="onSubmit()" [showKeyboard]="showKeyboard"></app-keyboard>
         </div>
         <div class="normal-movies-container__search__content">
-            <app-search-bar (outputEmitter)="changeContent($event)"></app-search-bar>
+            <app-primary-button (btnAction)="handleSearch()" text="Search" focusable="true"></app-primary-button>
         </div>
         
-    </div>
-    <div class="normal-movies-container__filters">
-        <app-secondary-button class ="focusable" (btnAction)="changeGenre(28)" text="Action" [checked]="objFilters[28]"></app-secondary-button>
-        <app-secondary-button class ="focusable" (btnAction)="changeGenre(35)" text="Comedy" [checked]="objFilters[35]"></app-secondary-button>
-        <app-secondary-button class ="focusable" (btnAction)="changeGenre(18)" text="Drama" [checked]="objFilters[18]"></app-secondary-button>
 
     </div>
 

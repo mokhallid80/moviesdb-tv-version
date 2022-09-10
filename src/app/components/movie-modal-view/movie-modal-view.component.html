@@ -1,4 +1,4 @@
-<div class="movie-modal-container">
+<div class="movie-modal-container" (keydown)="closeModal($event)">
     <div class="movie-modal-container__img">
         <div class="movie-modal-container__img__effect"></div>
         <img [ngStyle]="{'opacity':hideImg? 0:1}" (error) = "hideImage()" src={{image}}/>
@@ -6,20 +6,20 @@
     <div class="movie-modal-container__info">
         <div class="movie-modal-container__info__main-info">
             <div class="movie-modal-container__info__main-info__title">
-                {{fromParent.title}}
+                {{fromParent.data.title}}
             </div>
             
             <div class="movie-modal-container__info__main-info__extras">
-                <div >{{fromParent.release_date}}</div>
+                <div >{{fromParent.data.release_date}}</div>
                 <div class="movie-modal-container__info__main-info__extras__generes">
-                    <div class="movie-modal-container__info__main-info__extras__generes__genere" *ngFor="let genre of fromParent.genres">{{genre.name}}</div>
+                    <div class="movie-modal-container__info__main-info__extras__generes__genere" *ngFor="let genre of fromParent.data.genres">{{genre.name}}</div>
                 </div>
                 <div class="movie-modal-container__info__main-info__extras__adult">{{adult}}</div>        
             </div>
         </div>
         <div class="movie-modal-container__info__overview">
             <div>
-                <p>{{fromParent.overview}}</p>
+                <p>{{fromParent.data.overview}}</p>
             </div>
            <div class="movie-modal-container__info__overview__options">
                 <div class="movie-modal-container__info__overview__options__rating">
@@ -28,7 +28,7 @@
                             <mat-icon class="transparent-icon big-icon" aria-hidden="false" aria-label="Original Movies" fontIcon="star"></mat-icon>
                         </div>
                         <div>
-                            {{fromParent.vote_average}} 
+                            {{fromParent.data.vote_average}} 
                         </div>
                     </div>
                     <div class="movie-modal-container__info__overview__options__rating__info"> 
@@ -36,7 +36,7 @@
                             <mat-icon class="white-icon big-icon" aria-hidden="false" aria-label="Original Movies" fontIcon="people"></mat-icon>
                         </div>
                         <div>
-                            {{ fromParent.vote_count }}
+                            {{ fromParent.data.vote_count }}
                         </div>
                     </div>   
                     <div class="movie-modal-container__info__overview__options__rating__info"> 
@@ -44,7 +44,7 @@
                             <mat-icon class="transparent-icon big-icon" aria-hidden="false" aria-label="Original Movies" fontIcon="whatshot"></mat-icon>
                         </div>
                         <div>
-                            {{fromParent.popularity}} 
+                            {{fromParent.data.popularity}} 
                         </div>
                     </div>                   
                     

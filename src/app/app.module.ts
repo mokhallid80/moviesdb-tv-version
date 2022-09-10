@@ -24,7 +24,9 @@ import { MovieModalViewComponent } from './components/movie-modal-view/movie-mod
 import { NormalViewComponent } from './components/normal-view/normal-view.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
-
+import { KeyboardModalComponent } from './components/keyboard-modal/keyboard-modal.component';
+import { KeyboardComponent } from './components/keyboard/keyboard.component';
+import { NgbModalDraggableModule } from 'ngb-modal-draggable'
 
 
 @NgModule({
@@ -41,7 +43,9 @@ import { environment } from '../environments/environment';
     SecondaryButtonComponent,
     DetailsModalComponent,
     MovieModalViewComponent,
-    NormalViewComponent
+    NormalViewComponent,
+    KeyboardModalComponent,
+    KeyboardComponent
   ],
   imports: [
     BrowserModule,
@@ -56,7 +60,8 @@ import { environment } from '../environments/environment';
       // Register the ServiceWorker as soon as the application is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
-    })
+    }),
+    NgbModalDraggableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

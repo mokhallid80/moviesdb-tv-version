@@ -1,4 +1,4 @@
-<div class="normal-movie-item focusable"  (keydown)="handleKey($event)">
+<div class="normal-movie-item focusable" tabindex="-1" (keydown)="handleKey($event)">
     <div>
         <app-details-modal id="details-btn" [movie]="movie"></app-details-modal>
     </div>

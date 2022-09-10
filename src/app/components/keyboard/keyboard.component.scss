@@ -1,0 +1,116 @@
+@import "../../../variables.scss";
+.container{
+   opacity: 1;
+   transition: all 0.4s;
+}
+.hidden-container{
+    opacity: 0;
+    transition: all 0.4s;
+
+}
+.output{
+    background-color: white;
+    height: 45px;
+    width: 610px;
+    border-radius: 10px;
+    padding-left: 5px;
+    padding-right: 5px;
+    overflow-x: auto;
+    display: flex;
+    align-items: center;
+}
+.keyboard{
+    box-sizing: border-box;
+    width: 610px;
+    height: auto;
+  
+    border-radius: 15px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    // outline: 5px solid #A40F98;
+    overflow: hidden;
+    // background:linear-gradient(45deg, $primary-color-light, $seconday-color-light);
+    background: $primay-background-color;
+    transition: all 0.2s;
+    &__right{
+        // outline: 5px solid blue;
+        width: 110px;
+        height: 250px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        
+        &__option{
+            cursor: pointer;
+           
+
+            width: 100%;
+            height: 25%;
+            padding: 1px;
+            &__content{
+             // border: 2px solid lime;
+              width: 100%; 
+              height: 100%;
+              display: flex;
+              align-items: center;
+              justify-content: center; 
+              background-color:rgba(255, 255, 255, 0.287);
+            }
+        }
+        &__option:hover, &__option:focus{
+            background-color: rgba(255, 255, 255, 0.34);
+        }
+    }
+    &__left{
+       
+        display: flex;
+        flex-wrap: wrap;
+        width:500px;
+        
+        &__symbol{
+            cursor: pointer;
+            
+            height: 50px;
+            width: 50px;
+            color: white;
+            
+
+            transition: all 0.2s;
+            border-radius: 2px;
+           
+            // margin: 1px 1px 1px 1px;
+            padding: 1px;
+            &__content{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color:rgba(255, 255, 255, 0.287);
+                height: 100%;
+                width: 100%;
+                
+            }
+        }
+        &__symbol:hover, &__symbol:focus{
+            background-color: rgba(255, 255, 255, 0.34);
+            // color: black;
+            transform: scale(1.1);
+        }
+        &__symbol:nth-child(41){
+            // border: 2px solid blue;
+            width: 100%;
+        }
+    }
+
+}
+
+.shift_on{
+    background-color:  rgba(3, 255, 3, 0.326) !important;
+}
+
+.hide-keyboard{
+    border: 2px solid lime;
+}

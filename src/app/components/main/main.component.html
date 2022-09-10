@@ -8,10 +8,10 @@
 
         <div class="main-container__scroll">
 
-            <div class="focusable" (click)="scroll(target1)">
+            <div  (click)="scroll(target1)">
                 <mat-icon >expand_less</mat-icon>
             </div>
-            <div class="focusable" (click)="scroll(target2)">
+            <div  (click)="scroll(target2)">
                 <mat-icon >expand_more</mat-icon>
             </div>
             
@@ -25,7 +25,7 @@
         <div class="main-container__movies__normal-movies ">
             <app-normal-movie ></app-normal-movie>
         </div>
-        <div class="main-container__footer focusable" #target2>
+        <div class="main-container__footer" #target2>
             <div class="main-container__footer__contacts">
                 <div [ngStyle]="{'margin':'1.3vh'}">Contact Us </div>
                 <div class="main-container__footer__contacts__icons">
