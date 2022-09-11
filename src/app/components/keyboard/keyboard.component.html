@@ -1,12 +1,12 @@
-<div [ngClass]="{ 'container' : showKeyboard, 'hidden-container' : !showKeyboard }"  class="">
+<div [ngClass]="{'keyboard':true, 'container' : showKeyboard, 'hidden-container' : !showKeyboard }"  >
     <div class="output">
         {{outputContent}}
     </div>
-    <div class="keyboard">
+    <div class="keyboard" tabindex="-1">
 
         <div class="keyboard__left">
             <div *ngFor="let symbol of allSymbols;" class="keyboard__left__symbol" >
-                <div class="key-focusable keyboard__left__symbol__content" id={{symbol}} (click)="handleSymbol($event)" (keydown)="handleSymbol($event)">
+                <div tabindex="-1" class="focusable-key keyboard__left__symbol__content" id={{symbol}} (click)="handleSymbol($event)" (keydown)="handleSymbol($event)">
                     {{symbol}}
                 </div>
             </div>
@@ -14,7 +14,7 @@
     
         <div class="keyboard__right">
             <div *ngFor="let option of rightOptions" [ngClass]="{ 'keyboard__right__option' : true }" >
-                <div [ngClass]="{'key-focusable': true,'keyboard__right__option__content': true,'shift_on': upperCase && option === 'Shift'  }" (click)="handleOption(option, $event)" (keydown)="handleOption(option, $event)">
+                <div tabindex="-1" [ngClass]="{'focusable-key': true,'keyboard__right__option__content': true,'shift_on': upperCase && option === 'Shift'  }" (click)="handleOption(option, $event)" (keydown)="handleOption(option, $event)">
                     {{option}}
                 </div>
             </div>    

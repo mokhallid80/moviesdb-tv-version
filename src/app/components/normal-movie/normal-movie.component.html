@@ -14,9 +14,9 @@
 
     <div class="normal-movies-container__filters">
         <div class="normal-movies-container__filters__group">
-            <app-secondary-button class ="focusable" (btnAction)="changeGenre(28)" text="Action" [checked]="objFilters[28]"></app-secondary-button>
-            <app-secondary-button class ="focusable" (btnAction)="changeGenre(35)" text="Comedy" [checked]="objFilters[35]"></app-secondary-button>
-            <app-secondary-button class ="focusable" (btnAction)="changeGenre(18)" text="Drama" [checked]="objFilters[18]"></app-secondary-button>
+            <app-secondary-button  (btnAction)="changeGenre(28)" text="Action" [checked]="objFilters[28]"></app-secondary-button>
+            <app-secondary-button  (btnAction)="changeGenre(35)" text="Comedy" [checked]="objFilters[35]"></app-secondary-button>
+            <app-secondary-button  (btnAction)="changeGenre(18)" text="Drama" [checked]="objFilters[18]"></app-secondary-button>
         </div>
 
         <div [ngClass]="{'normal-movies-container__search__keyboard': true, 'hide-keyboard' : !showKeyboard }">

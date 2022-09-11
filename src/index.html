@@ -22,15 +22,19 @@
       // Define navigable elements (anchors and elements with "focusable" class).
       SN.add({
         id: 'main',
-        selector: '.focusable'
+        selector: '.focusable',
+        // defaultElement:'.top-movie-item',
+
       });
+      
       SN.add({
           id: 'keyboard',
-          selector: '.key-focusable',
+          selector: '.focusable-key',
+          restrict: 'self-only'
         });
       // Make the *currently existing* navigable elements focusable.
       SN.makeFocusable();
-
+      SN.focus('main');
 
     });
   </script>
@@ -39,8 +43,6 @@
     :focus {
       outline: none;
       box-shadow: 0 0 0 4pt rgba(134, 5, 154, 0.754);
-      transition: transform 0.4s;
-      transform:scale(1.05);
       border: none;
     }
   </style>

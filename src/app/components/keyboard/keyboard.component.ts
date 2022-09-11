@@ -17,7 +17,7 @@ export class KeyboardComponent implements OnInit {
   numbers = ["0","1","2","3","4","5","6","7","8","9"];
   characters = [...Array(26).keys()].map(i => String.fromCharCode(i+97))
   extras = ["!","?",".",","," "];
-  rightOptions = ["Clear", "Clear All","Shift", "Enter"];
+  rightOptions = ["Esc","Clear", "Clear All","Shift", "Enter"];
   allSymbols = [...this.numbers, ...this.characters, ...this.extras];
   
 
@@ -43,6 +43,11 @@ export class KeyboardComponent implements OnInit {
   handleOption(option:string, event){
 
     if(this.validClick(event)){
+      if(option === 'Esc'){
+        this.enterAction.emit();
+        this.outputContent = '';  
+        this.output.emit(this.outputContent);
+      }
       if(option === 'Shift'){  
         this.upperCase = !this.upperCase;
         var newChars = [...Array(26).keys()].map(i => (this.upperCase)? String.fromCharCode(i+97).toUpperCase():String.fromCharCode(i+97))
@@ -60,8 +65,7 @@ export class KeyboardComponent implements OnInit {
       if(option === 'Enter'){
         this.output.emit(this.outputContent);
         this.enterAction.emit();
-        this.outputContent = '';
-        
+        this.outputContent = '';  
       }
     }
 

@@ -1,9 +1,8 @@
 @import "../../../variables.scss";
 
 .hide-keyboard{
-    max-height: 0px;
-    opacity: 0;
     transition: all 0.4s;
+    display: none;
 }
 .empty-movies-container{
     height: 100%;
@@ -67,7 +66,9 @@
         align-items: center;
         justify-content: space-between;
         margin-left: calc(20px);
+
         &__group{
+
             display: flex;
             align-items: center;
         }
@@ -76,16 +77,21 @@
          }  
     }
     &__search{
-        border: 2px solid black;
+
         padding-left: 20px;
         padding-right: 20px;
         display: flex;
         align-items: center;
         justify-content: space-between;
+        
         &__content{
-            height: min(10vh,10vw);
-            min-height: 60px;
+
+
+            display: flex;
+            align-items: center;
+            
             &__keyboard{
+
                 width: 100px;
                 max-height: 100px;
                 opacity: 1;

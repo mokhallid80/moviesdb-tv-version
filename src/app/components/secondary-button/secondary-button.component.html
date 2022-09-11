@@ -1,5 +1,5 @@
-<div class="secondary-btn-container" (click)="onClick()">
-    <button  [ngClass]="{'secondary-btn-container__secondary-btn': true, 'checked': checked, 'focusable': focusableClass}" >
+<div class="secondary-btn-container focusable" (click)="onClick($event)" (keydown)="onClick($event)">
+    <button  [ngClass]="{'secondary-btn-container__secondary-btn': true, 'checked': checked}" >
         {{text}}
     </button>
 </div>

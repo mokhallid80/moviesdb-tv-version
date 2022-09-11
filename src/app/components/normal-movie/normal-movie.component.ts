@@ -37,7 +37,7 @@ export class NormalMovieComponent implements OnInit {
 
 
   onSubmit(){
-    console.log('submitted')
+    
     if(this.child.outputContent !== '')
       this.servicesService.getSearchedMovies(this.child.outputContent).subscribe((data)=>{
         this.movies = data.results;
@@ -46,8 +46,8 @@ export class NormalMovieComponent implements OnInit {
         if(this.movies.length === 0) this.notEmpty=false;
         else this.notEmpty=true;
       });
-    else
-      alert("Can't be empty :)")
+    // else
+    //   alert("Can't be empty :)")
       this.showKeyboard = false;
   }
   handleSearch(){
