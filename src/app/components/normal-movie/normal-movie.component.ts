@@ -30,6 +30,12 @@ export class NormalMovieComponent implements OnInit {
   filters:any[]=[];
 
 
+  playAudio(){
+    let audio = new Audio();
+    audio.src = "../assets/audio/popUp.wav";
+    audio.load();
+    audio.play();
+  }
 
   addItem(newItem: string) {
     this.items.push(newItem);
@@ -51,8 +57,9 @@ export class NormalMovieComponent implements OnInit {
       this.showKeyboard = false;
   }
   handleSearch(){
-    console.log("search clicked")
+
     if(!this.showKeyboard){
+        this.playAudio();
         this.showKeyboard = true;
     }else{
       //perform the search then close the keyboard

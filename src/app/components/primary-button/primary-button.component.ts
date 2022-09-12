@@ -11,6 +11,7 @@ export class PrimaryButtonComponent implements OnInit {
   @Input() text: string = "Empty";
   @Input() focusable: string = "false";
   @Input() checked: boolean = false;
+  @Input() showKeyboard: boolean = false;
   @Output() btnAction: EventEmitter<any> = new EventEmitter();
 
   focusableClass: boolean = false;
@@ -21,6 +22,7 @@ export class PrimaryButtonComponent implements OnInit {
       this.focusableClass = false;
     }
   onClick(event){
+    console.log("done")
     if(event.type === 'click' || (event.keyCode && event.keyCode === 13))
     this.btnAction.emit();
   }

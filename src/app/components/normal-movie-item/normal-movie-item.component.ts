@@ -19,7 +19,7 @@ export class NormalMovieItemComponent implements OnInit {
   }
 
   handleKey(event){
-    if(event.keyCode === 13){
+    if(event.type==='click' || (event.keyCode && event.keyCode === 13)){
       let elem : HTMLElement = document.getElementById("details-btn") as HTMLElement;
       elem.click();
       this.child.open();

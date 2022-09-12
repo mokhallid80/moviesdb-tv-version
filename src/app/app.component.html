@@ -1,1 +1,17 @@
-<app-main></app-main>
+<div>
+    <div [ngClass]="{'loading': true, 'hide': !loading}">
+        <div class="loading-container">
+            <div class="loading-container__char" *ngFor="let char of charArray">
+                {{char}}
+            </div>
+        </div>
+        <div class="circles">
+            <div class="circles__circle"><span>.</span></div>
+            <div class="circles__circle"><span>.</span></div>
+            <div class="circles__circle"><span>.</span></div>
+            <div class="circles__circle"><span>.</span></div>
+            <div class="circles__circle"><span>.</span></div>
+        </div>
+    </div>
+    <app-main></app-main>
+</div>

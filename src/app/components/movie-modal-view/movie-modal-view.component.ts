@@ -17,6 +17,7 @@ export class MovieModalViewComponent implements OnInit {
   }
   closeModal(event){
     // will handle this to close only on the back button :)
+    // if(event.type==='click' || (event.keyCode && event.keyCode === 13))
     this.fromParent.ref.close();
    // this.modalRef.close();
   

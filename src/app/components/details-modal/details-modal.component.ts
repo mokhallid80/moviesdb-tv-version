@@ -14,11 +14,18 @@ export class DetailsModalComponent {
 
     this.servicesService.getDetailedMovie(this.movie.id).subscribe((data)=>{this.data = data})
   }
+
+  playAudio(){
+    let audio = new Audio();
+    audio.src = "../../../assets/audio/popUp.wav";
+    audio.load();
+    audio.play();
+  }
   open() {
     const modalRef = this.modalService.open(MovieModalViewComponent,{backdropClass:"backdrop"});
     modalRef.componentInstance.name = 'Movie Details';
     modalRef.componentInstance.fromParent = {data:this.data, ref: modalRef};
- 
+    this.playAudio();
     
   }
 }

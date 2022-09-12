@@ -1,0 +1,103 @@
+@import '../variables.scss';
+
+.loading{
+
+    color: white;
+    height: 100vh;
+    width: 100%;
+    z-index: 1000;
+    position: absolute;
+    background-color: $primay-background-color;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+
+    .circles{
+
+        // position: absolute;
+        // left:50%;
+        // top:65%;
+        // transform: translate(-50%, 0);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        &__circle{
+            font-size: 300px;
+            color: $primary-color;
+            line-height:0;
+            animation-name:circle;
+
+            animation-duration: 5s;
+ 
+        }
+        &__circle:nth-child(odd){
+            animation-delay: 1s;
+        }
+        &__circle:nth-child(odd){
+            animation-name: destroy;
+           
+        }
+    }
+    
+}
+.loading-container{
+
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:linear-gradient(45deg, $primary-color, $seconday-color);
+    -webkit-background-clip: text;
+    &__char{
+        color: transparent;
+        font-size: 200px;
+
+        font-weight: bolder;
+        cursor: pointer;
+        transition: all 0.4s;
+        animation-duration: 5s;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+
+    }
+    &__char:nth-child(odd){
+        // animation-name: odd;
+    }
+    &__char:nth-child(even){
+        // animation-name: even;
+    }
+
+    
+
+}
+.hide{
+    display: none;
+}
+@keyframes circle {
+    0%  {font-size: 300px; }
+    25%  {font-size: 200px; color: $seconday-color;}
+    50%  {font-size: 240px; color: $primary-color;}
+    75%  {font-size: 275px; color: $seconday-color;}
+    100% {font-size: 300px; color: $primary-color;}
+}
+@keyframes destroy {
+    0%  {font-size: 300px; }
+    25%  {font-size: 200px; color: $seconday-color;}
+    50%  {font-size: 240px; color: $primary-color;}
+    75%  {font-size: 275px; color: $seconday-color;}
+    100% {font-size: 300px; color: $primary-color;}
+}
+@keyframes even {
+    0%  {font-size: 200px;}
+    25%  {font-size: 150px;}
+    50%  {font-size: 200px;}
+    100% {font-size: 200px;}
+}

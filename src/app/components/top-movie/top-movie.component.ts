@@ -16,12 +16,13 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
         style({opacity: 0 }),  // initial
         animate('1s',
           style({opacity: 1 }))  // final
-      ]),
-      transition(':leave', [
-        style({opacity: 1}),  // initial
-        animate('0.5s',
-          style({ opacity: 0}))  // final
       ])
+      // ,
+      // transition(':leave', [
+      //   style({opacity: 1}),  // initial
+      //   animate('0.5s',
+      //     style({ opacity: 1}))  // final
+      // ])
     ])
   ]
 })
@@ -30,7 +31,7 @@ export class TopMovieComponent implements OnInit {
   mySubscription: Subscription;
 
   constructor(private servicesService: ServicesService) { 
-     this.mySubscription= interval(1000000).subscribe((x =>{
+     this.mySubscription= interval(20000).subscribe((x =>{
                 this.changePage(this.currPage + 1);
             }));
   }

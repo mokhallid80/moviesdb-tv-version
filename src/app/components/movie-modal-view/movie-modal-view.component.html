@@ -24,26 +24,36 @@
            <div class="movie-modal-container__info__overview__options">
                 <div class="movie-modal-container__info__overview__options__rating">
                     <div class="movie-modal-container__info__overview__options__rating__info"> 
-                        <div class="golden-icon-container">
-                            <mat-icon class="transparent-icon big-icon" aria-hidden="false" aria-label="Original Movies" fontIcon="star"></mat-icon>
-                        </div>
-                        <div>
+                    
+                        <svg xmlns="http://www.w3.org/2000/svg"  fill="currentColor" class="bi bi-star-fill bs-icon" viewBox="0 0 16 16">
+                            <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                        </svg>
+                    
+                        <div class="movie-modal-container__info__overview__options__rating__info__text">
+
                             {{fromParent.data.vote_average}} 
                         </div>
                     </div>
                     <div class="movie-modal-container__info__overview__options__rating__info"> 
                         <div class="movie-modal-container__info__overview__options__rating__info__icon">
-                            <mat-icon class="white-icon big-icon" aria-hidden="false" aria-label="Original Movies" fontIcon="people"></mat-icon>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-people-fill bs-icon" viewBox="0 0 16 16">
+                                <path d="M7 14s-1 0-1-1 1-4 5-4 5 3 5 4-1 1-1 1H7zm4-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                                <path fill-rule="evenodd" d="M5.216 14A2.238 2.238 0 0 1 5 13c0-1.355.68-2.75 1.936-3.72A6.325 6.325 0 0 0 5 9c-4 0-5 3-5 4s1 1 1 1h4.216z"/>
+                                <path d="M4.5 8a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z"/>
+                            </svg>
                         </div>
-                        <div>
+                        <div class="movie-modal-container__info__overview__options__rating__info__text">
                             {{ fromParent.data.vote_count }}
                         </div>
                     </div>   
                     <div class="movie-modal-container__info__overview__options__rating__info"> 
-                        <div class="fire-icon-container">
-                            <mat-icon class="transparent-icon big-icon" aria-hidden="false" aria-label="Original Movies" fontIcon="whatshot"></mat-icon>
-                        </div>
-                        <div>
+                    
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-fire bs-icon" viewBox="0 0 16 16">
+                            <path d="M8 16c3.314 0 6-2 6-5.5 0-1.5-.5-4-2.5-6 .25 1.5-1.25 2-1.25 2C11 4 9 .5 6 0c.357 2 .5 4-2 6-1.25 1-2 2.729-2 4.5C2 14 4.686 16 8 16Zm0-1c-1.657 0-3-1-3-2.75 0-.75.25-2 1.25-3C6.125 10 7 10.5 7 10.5c-.375-1.25.5-3.25 2-3.5-.179 1-.25 2 1 3 .625.5 1 1.364 1 2.25C11 14 9.657 15 8 15Z"/>
+                        </svg>
+                       
+                        <div class="movie-modal-container__info__overview__options__rating__info__text">
+
                             {{fromParent.data.popularity}} 
                         </div>
                     </div>                   

@@ -22,6 +22,13 @@ export class KeyboardComponent implements OnInit {
   
 
   outputContent:string = "";
+  playAudio(audioPath:string){
+    let audio = new Audio();
+    audio.src = audioPath;
+    audio.load();
+    audio.play();
+  }
+
   ngOnInit(): void {
     console.log(this.showKeyboard);
   }
@@ -33,7 +40,7 @@ export class KeyboardComponent implements OnInit {
   }
   handleSymbol(symbol:any){
     if(this.validClick(symbol)){
-    
+      this.playAudio("../assets/audio/key.wav");
       this.outputContent += symbol.target.id;
       this.output.emit(this.outputContent);
       console.log(this.outputContent);
@@ -56,10 +63,14 @@ export class KeyboardComponent implements OnInit {
       }
       if(option === 'Clear All'){
         this.outputContent = '';
+        this.playAudio("../assets/audio/clear.wav");
+
         this.output.emit(this.outputContent);
       }
       if(option === 'Clear'){
         this.outputContent = this.outputContent.slice(0, -1);
+        this.playAudio("../assets/audio/clear.wav");
+
         this.output.emit(this.outputContent);
       }
       if(option === 'Enter'){

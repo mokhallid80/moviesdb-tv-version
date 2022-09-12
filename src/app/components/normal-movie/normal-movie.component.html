@@ -23,7 +23,7 @@
             <app-keyboard (enterAction)="onSubmit()" [showKeyboard]="showKeyboard"></app-keyboard>
         </div>
         <div class="normal-movies-container__search__content">
-            <app-primary-button (btnAction)="handleSearch()" text="Search" focusable="true"></app-primary-button>
+            <app-primary-button (btnAction)="handleSearch()" text="Search" [showKeyboard]="showKeyboard"  focusable="true"></app-primary-button>
         </div>
         
 

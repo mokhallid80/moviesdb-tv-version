@@ -121,6 +121,23 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     align-items: center;
 }
 
+.bs-icon-focus{
+    padding: 3px;
+}
+.bs-icon{
+    
+    width: 35px;
+    height: 35px;
+
+    margin-right: 0.2vw;
+}
+
+.bi-star-fill{
+    color: #FFC300;
+}
+.bi-fire{
+    color: #C70039;
+}
 @media screen and (max-width: $phones-width) {
     .modal-dialog{
         height: 70% !important;

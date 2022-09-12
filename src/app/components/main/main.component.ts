@@ -11,7 +11,9 @@ export class MainComponent implements OnInit {
   scroll(el: HTMLElement) {
     el.scrollIntoView({behavior: 'smooth'});
 }
+
   ngOnInit(): void {
+
   }
 
 }

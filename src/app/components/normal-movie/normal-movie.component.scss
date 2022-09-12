@@ -115,12 +115,13 @@
             width: fit-content;
             display: flex;
             align-items: center;
-            font-size: max(2.5vh, 3vw);
+            font-size: 70px;
             font-weight: bolder;
             color:transparent;
             background: linear-gradient(45deg, $primary-color, $seconday-color);
             -webkit-background-clip: text;
             cursor: pointer;
+            margin-bottom: 10px;
         }
     }
     //overflow: scroll;

@@ -21,9 +21,9 @@ export class SecondaryButtonComponent implements OnInit {
       this.focusableClass = false;
     }
     onClick(event){
-      console.log("wow")
+      console.log('performing')
       if(event.type === 'click' || (event.keyCode && event.keyCode === 13))
-      this.btnAction.emit();
+          this.btnAction.emit();
     }
 
 }
